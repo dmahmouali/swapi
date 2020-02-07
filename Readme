@@ -1,0 +1,18 @@
+hi,
+  this is App for Star war APIs 'swapi.co'
+
+How to run the Application?
+    -clone this repo
+    
+    -download venv and activate it or install dependencies
+      > flask
+      > requests
+      > requests_futures
+
+    - for make sure : set FLASK_APP=app.py
+    
+    -run 'python -m flask run'
+
+    -open browser in 127.0.0.1:5000 and enter the name for search
+
+    -there's logs in console with time and semple table for desplay data on browser 

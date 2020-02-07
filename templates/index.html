@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+<style>
+    .content {
+        width: 60%;
+    }
+
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+        background-color: #ddd;
+    }
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Star War api search</h1>
+    <form action="/" method="post">
+        <input type="text" name="textsearch" id="textsearch">
+        <input type="submit" value="search">
+    </form>
+</div>
+<div class="content">
+    <h1>Search result</h1>
+    <table id="customers">
+        <tr>
+            <th>Field</th>
+            <th>Contact</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><b>{{context['person_name']}}</b></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><b> {{context['person_gender']}}</b></td>
+        </tr>
+        <tr>
+            <td>Species</td>
+            <td><b>{{context['species']}}</b></td>
+        </tr>
+        <tr>
+            <td>Average lifespan</td>
+            <td><b>{{context['average_lifespan']}}</b></td>
+        </tr>
+        <tr>
+            <td>Home planet name</td>
+            <td><b>{{context['home_planet_name']}}</b></td>
+        </tr>
+        <tr>
+            <td>List of films</td>
+            <td><b>{{context['films']}}</b></td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
